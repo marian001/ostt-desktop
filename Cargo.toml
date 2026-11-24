@@ -1,0 +1,22 @@
+[package]
+name = "ostt"
+version = "0.1.0"
+edition = "2021"
+description = "Offline speech-to-text dictation for the Linux desktop (port of OSTT for Android)"
+license = "MIT"
+
+[dependencies]
+transcribe-cpp = { version = "0.4.2", default-features = false, features = ["vulkan"] }
+hound = "3"
+libc = "0.2"
+sha2 = "0.10"
+ksni = { version = "0.3", default-features = false, features = ["blocking", "async-io"] }
+eframe = { version = "0.35", default-features = false, features = ["default_fonts", "glow", "wayland", "x11"] }
+png = "0.18"
+
+[profile.release]
+panic = "unwind"
+
+# One-line change: egui drops the Super modifier on Linux; the shortcut field needs it.
+[patch.crates-io]
+egui-winit = { path = "patches/egui-winit" }

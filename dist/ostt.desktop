@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Offline Speech to Text
+Comment=Dictation settings, models and dictionary
+Exec=ostt gui
+Icon=audio-input-microphone
+Categories=Utility;Accessibility;
+StartupWMClass=ostt

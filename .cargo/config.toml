@@ -1,0 +1,6 @@
+# SPIRV-Headers nie su v systeme nainstalovane; pouzivame lokalne rozbalenu kopiu
+# (vendor/spirv, z balika spirv-headers), aby build nepotreboval sudo.
+[env]
+CMAKE_PREFIX_PATH = { value = "vendor/spirv/usr", relative = true }
+# ggml-vulkan najde balik cez CMake, ale include cestu neprida ku kompilacii -> gcc ju dostane takto.
+CPLUS_INCLUDE_PATH = { value = "vendor/spirv/usr/include", relative = true }
